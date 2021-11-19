@@ -30,7 +30,9 @@ class TestCommand extends Command
     public function handle()
     {
         $spacetraders = new SpaceTraders(env('API_KEY'));
+
         $this->line($spacetraders->account()['user']['username']);
+        $this->line($spacetraders->loans()['loans'][0]['amount']);
     }
 
     /**
